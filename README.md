@@ -1,11 +1,16 @@
-# Modified version of Conway's Game of Life
+# Cellular Automata
 
-Usually `S[t] = CGOL(S[t-1])` where CGOL is the standard function of Conway's game of life,
-and S is a binary matrix denoting if a cell is alive or dead.
+Here is presented an implementation of a general N-state cellular automata in Python.
+The three integral components are:
 
-Here it is modified to `S[t] = Min(1, CGOL(S[t-1]) + L[t-1]) * (I - D[t-1])`
-where *L* and *D* are two matrices which denote Lifezone and a Deadzone.
+1. Grid - The state of each cell in the grid is dependent on it's neighbour. Provided is a sample implementation of the
+          Conway's game of life, generalized to multiple states.
 
-All cells in a deadzone always remain dead and all cells in a alive zone always remain alive.
-The matrices *L*, *D* can also change every iteration. In this implementation it's static but there is
-no reason it can't change with time.
+2. Agent - An agent which moves in the grid and changes it's state based on it's own state. Provided is a sample implementation of
+           agent's like the langdon's ant and other turmites.
+
+3. Automata - Responsible for integrating the Grid and the agent and making them interact. Also responsible for the rendering.
+
+## Why I made this?
+
+It was fun and wanted to challenge myself.
